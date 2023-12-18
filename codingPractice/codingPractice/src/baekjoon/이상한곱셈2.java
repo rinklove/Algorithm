@@ -1,17 +1,20 @@
 package baekjoon;
 
+import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class 이상한곱셈2 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int answer = 0;
+		BigInteger a = sc.nextBigInteger();
+		BigInteger b = sc.nextBigInteger();
+		Long answer = 0L;
 		
-		String[] splitA = String.valueOf(a).split("");
-		String[] splitB = String.valueOf(b).split("");
+
+		String[] splitA = a.toString().split("");
+		String[] splitB = b.toString().split("");
 		
 		for(int n = 0; n < splitA.length; n++) {
 			for(int m = 0; m < splitB.length; m++) {
@@ -20,5 +23,6 @@ public class Main {
 		}
 		
 		System.out.println(answer);
+		
 	}
 }
