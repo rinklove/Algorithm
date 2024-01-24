@@ -12,14 +12,19 @@ public class Silver5_수들의합 {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
+		//시간 초과
 		long num = Long.parseLong(br.readLine());
-		int count = 0;
-		while((count* (count + 1) / 2) < num) {
-			count++;
+		long count = 0;
+		long currentSum = 0;
+		while(true) {
+			currentSum = count* (count + 1) / 2;
+			if(currentSum < num)
+				count++;
+			else break;
 		}
-		
-		bw.write(String.valueOf(count-1));
+		System.out.println("currentSum = " + currentSum);
+		count = num <=  2 ? 1 : currentSum == num ? count : count-1;
+		bw.write(String.valueOf(count));
 		bw.flush();
 		
 	}
