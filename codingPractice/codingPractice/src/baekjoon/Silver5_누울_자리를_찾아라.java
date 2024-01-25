@@ -15,7 +15,7 @@ public class Silver5_누울_자리를_찾아라 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-			int N = br.read();
+			int N = Integer.parseInt(br.readLine());
 			String[] room  = new String[N];
 			
 			int ableRow = 0;
