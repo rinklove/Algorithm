@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.silver5;
 
 import java.time.LocalDate;
 import java.time.Period;

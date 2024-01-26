@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.silver5;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,26 +6,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Silver5_문서검색 {
+
+public class Silver5_3의배수 {
 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		String str = br.readLine(); //한줄에 입력받기
-		String replace = br.readLine();
+		
+		String num = br.readLine();
 		int count = 0;
-//		bw.write(str); //str값 출력
-//		bw.flush(); //남은값 모두 출력 하면서 비우기
 		
-		
-		while(str.contains(replace)) {
-			str = str.replaceFirst(replace, "/");
+		while(num.length() > 1) {
+			num = String.valueOf(num.chars().map(c -> c-48).sum());
 			count++;
 		}
 		
 		bw.write(String.valueOf(count));
+		bw.newLine();
+		if(Integer.parseInt(num) % 3 == 0) {
+			bw.write("YES");
+		} else {
+			bw.write("NO");
+		}
 		bw.flush();
-		bw.close();
 	}
 }

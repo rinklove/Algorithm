@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.silver5;
 
 import java.util.Arrays;
 import java.util.Scanner;

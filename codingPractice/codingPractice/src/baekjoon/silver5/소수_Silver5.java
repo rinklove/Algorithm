@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.silver5;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
