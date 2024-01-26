@@ -37,7 +37,10 @@ public class Silver4_수열정렬 {
 //        System.out.println("map = " + map);
 //        value로 반환 한 다음에 키 값을 추출.
         List<Integer> list = map.entrySet().stream()
-                .sorted(Comparator.comparingInt(Map.Entry<Integer, Integer>::getValue).thenComparing(Map.Entry<Integer, Integer>::getKey)).map(Map.Entry::getKey).collect(Collectors.toList());
+                .sorted(Comparator.comparingInt(Map.Entry<Integer, Integer>::getValue)
+                        .thenComparing(Map.Entry<Integer, Integer>::getKey))
+                .map(Map.Entry::getKey).
+                collect(Collectors.toList());
 
         for(Map.Entry entry : map.entrySet()) {
             int key = (int) entry.getKey();
