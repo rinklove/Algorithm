@@ -3,6 +3,7 @@ package baekjoon.silver3;
 import java.io.*;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -30,11 +31,33 @@ public class 회전하는_큐 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] index = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-        //배열로..?
-//        int[] index = IntStream.rangeClosed(1, arr[0]).map(i -> i)
-        for(int i = 0; i < arr[1]; i++) {
 
+        //LinkedList 활용
+        LinkedList<Integer> list = new LinkedList<>(
+                IntStream.rangeClosed(1, arr[0])
+                        .mapToObj(Integer::new)
+                        .collect(Collectors.toList()));
+        int count = 0;
+
+        for(int i : index) {
+            while(list.get(0) != i) {
+                int findIndex = list.indexOf(i);
+                int size = list.size();
+                if(findIndex < size-findIndex) {
+                    //왼쪽으로 이동
+                    list.addLast(list.removeFirst());
+                } else {
+                    //오른쪽으로 이동
+                    list.addFirst(list.removeLast());
+                }
+                count++;
+            }
+            list.remove(0);
         }
+
+        bw.write(String.valueOf(count));
+        bw.flush();
     }
 }
