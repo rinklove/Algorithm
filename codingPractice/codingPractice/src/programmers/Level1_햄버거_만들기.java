@@ -35,25 +35,24 @@ public class Level1_햄버거_만들기 {
 	private static int solution(int[] ingredient) {
 		int answer = 0;
 		String str = Arrays.stream(ingredient).mapToObj(String::valueOf).collect(Collectors.joining(""));
-		StringBuilder sb = new StringBuilder();
-		sb.append(str);
 
-		int index = sb.indexOf("1231");
-		if(index > -1) {
-			answer = makeBurger(sb, index);
-		}
+		answer = makeBurger(str);
 		return answer;
 	}
 
-	private static int makeBurger(StringBuilder sb, int index) {
+	private static int makeBurger(String str) {
 		int count = 0;
-		sb.delete(index, index+4);
-		count++;
-		index = sb.indexOf("1231");
-		if(index > -1) {
-			return 1 + makeBurger(sb, index);
-		} else {
-			return count;
+		StringBuilder sb = new StringBuilder();
+		sb.append(str);
+		int index = sb.indexOf("1231", -1);
+		while(index > -1) {
+			System.out.println("index = " + index);
+			sb.delete(index, index+4);
+			count++;
+			index -= 4;
+			index = sb.indexOf("1231", index);
 		}
+
+		return count;
 	}
 }
