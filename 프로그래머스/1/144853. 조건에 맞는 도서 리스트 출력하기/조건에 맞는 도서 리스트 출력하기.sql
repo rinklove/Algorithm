@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+SELECT B.BOOK_ID, date_format(B.PUBLISHED_DATE , '%Y-%m-%d') PUBLISHED_DATE
+FROM BOOK B
+WHERE date_format(B.PUBLISHED_DATE, '%Y') = '2021'
+    AND B.CATEGORY= '인문'
+ORDER BY 2 ASC;
