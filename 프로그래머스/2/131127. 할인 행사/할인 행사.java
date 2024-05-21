@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 class Solution {
     private final Map<String, Integer> map = new HashMap<>();
-    //
+    //회원 유지 기간
     private final Integer MEMBERSHIP_DAY = 10;
     
     public int solution(String[] want, int[] number, String[] discount) {
