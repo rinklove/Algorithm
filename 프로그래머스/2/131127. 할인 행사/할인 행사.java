@@ -26,14 +26,9 @@ class Solution {
     
     //원하는 품목을 10개씩 구매
     private void buy(String[] discount) {
-        
-        //첫 날에 품목을 살 수 있으면 나머지 품목도 회원 자격으로 구매한다.
-        if(canBuy(discount[0])) {
-            for(String d : discount) {
-                if(!canBuy(d)) continue;
-
-                map.put(d, map.get(d)-1);
-            }
+        for(String d : discount) {
+            if(!canBuy(d)) continue;
+            map.put(d, map.get(d)-1);
         }
     }
     
