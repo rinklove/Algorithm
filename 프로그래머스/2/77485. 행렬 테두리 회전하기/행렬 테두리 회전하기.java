@@ -1,12 +1,3 @@
-/**
-    2 2  
-    5 4
-    => 2열 2 -> 4 (y1, y2,| x1)
-    => 2 -> 5열 4 (x1, x2,| y2)
-    => 5열 4 -> 2 (y2, x2,| x2)
-    => 5 -> 2열 2 (x2, x1,| y1)
-
-*/
 class Solution {
     private int[][] procession;
     
