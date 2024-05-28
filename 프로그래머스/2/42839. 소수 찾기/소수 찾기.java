@@ -1,16 +1,20 @@
 import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
-//123
-//1 2 3 12 13
+
 class Solution {
     private final Set<Integer> primes = new HashSet<>();  //소수
     private final Set<Integer> numberSet = new HashSet<>(); //조합 가능한 수
+    
     public int solution(String numbers) {
         int answer = 0;
+        
+        //소수인 숫자를 세팅
         initPrimes();
+        //dfs를 활용하여 조합 가능한 모든 수 저장
         dfs(numbers, "");
-        System.out.println("numberSet = " + numberSet);
+        
+        //조합된 수 중에서 소수가 몇 개인지 반환
         answer = findAnswer();
         
         return answer;
@@ -23,7 +27,6 @@ class Solution {
         //numberSet의 숫자가 소수이면 +1
         for(Integer number : numberSet) {
             if(primes.contains(number)) {
-                System.out.println("number = " + number);
                 answer++;
             }
         }
@@ -69,24 +72,8 @@ class Solution {
         }
     }
     
-    //각 숫자 카드로 조합할 수 있는 모든 수를 numberSet에 저장하기
-    //
-    /**
-        12345 ""
-        2345 1 / 1345 2 / 1245 3 / 1235 4 / 1234 5
-        345 12 
-        45 123 
-        5 1234 
-        "" 12345
-        4 1235
-        35 124
-        
-    */
-    private void dfs(String numbers, String others) {
-        if(!numbers.isEmpty()) {
-            numberSet.add(Integer.parseInt(numbers));
-        }
-        
+    //dfs를 활용하여 모든 수 조합하기
+    private void dfs(String numbers, String others) {        
         if(!others.isEmpty()) {
             numberSet.add(Integer.parseInt(others));    
         }
@@ -95,7 +82,5 @@ class Solution {
             char c = numbers.charAt(i);
             dfs(numbers.substring(0,i)+numbers.substring(i+1), others + c); 
         }
-    }
-    
-    
+    }   
 }
