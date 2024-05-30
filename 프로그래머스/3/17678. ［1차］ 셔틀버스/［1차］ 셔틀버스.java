@@ -9,7 +9,6 @@ class Solution {
         int[] seats = new int[m];
         int count = 0;
         int start = 60*9;
-        int end = 60*24;
         
         //크루 대기열 형성
         wait(timetable);
@@ -22,11 +21,9 @@ class Solution {
             start += t;
         } 
         
-        // for(int i : seats) {
-        //     System.out.println(i);
-        // }
+        //콘이 도착할 수 있는 가장 늦은 시간을 구한다
         int con = getConTime(seats, start);
-        
+        queue.clear();
         return getTime(con);
     }
     
@@ -39,15 +36,15 @@ class Solution {
             min = Math.min(min, seats[i]);
             max = Math.max(max, seats[i]);
         }
-        if(min == 0) con = start;
-        // else if(min == max && min != 0) con = max-1;
-        else con = max-1;
+        
+        if(min == 0) con = start;   //만약 빈자리가 있으면 셔틀 도착시간에 맞춰서 온다.
+        else con = max-1;   //빈자리가 없으면, 가장 늦게 도착한 사람보다 1분 먼저 도착한다.
         
         return con;
     }
     
     private int[] rideShuttle(int[] seats, int m, int time) {
-        Arrays.fill(seats, 0); //셔틀 초기화
+        Arrays.fill(seats, 0); //셔틀 좌석 초기화
         int index = 0;
         
         while(!queue.isEmpty() && index < m) {
@@ -59,6 +56,7 @@ class Solution {
         return seats;
     }
     
+    //크루 도착시간에 맞게 정렬 후 셔틀 대기줄에서 대기
     private void wait(String[] timetable) {
         Arrays.sort(timetable);
         
@@ -68,14 +66,14 @@ class Solution {
         }
     }
     
-    //시각을 분으로
+    //"HH:MM"을 분으로 표현(String -> int)
     private int getMinutes(String time) {
         String[] split = time.split(":");
         
         return Integer.parseInt(split[0])*60 + Integer.parseInt(split[1]);
     }
     
-    //분을 시각으로
+    //분을 "HH:MM"으로 표현(int -> String)
     private String getTime(int minutes) {
         StringBuilder sb = new StringBuilder();
         

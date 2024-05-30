@@ -1,10 +1,10 @@
 # [level 3] [1차] 셔틀버스 - 17678 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/17678#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/17678) 
 
 ### 성능 요약
 
-메모리: 79.8 MB, 시간: 5.65 ms
+메모리: 78.4 MB, 시간: 6.73 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 31일 07:15:10
+2024년 05월 31일 07:20:36
 
 ### 문제 설명
 
