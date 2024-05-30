@@ -7,7 +7,7 @@ class Solution {
     public String solution(int n, int t, int m, String[] timetable) {
         String answer = "";
         int[] seats = new int[m];
-        int count = 0;
+        int count = 1;
         int start = 60*9;
         
         //크루 대기열 형성
@@ -16,8 +16,8 @@ class Solution {
         //셔틀 도착하는 시간에 맞춰서 탑승
         while(true) {
             seats = rideShuttle(seats, m, start);
-            count++;
             if(count == n) break;
+            count++;
             start += t;
         } 
         
