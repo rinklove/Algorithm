@@ -47,10 +47,8 @@ class Solution {
         Arrays.fill(seats, 0); //셔틀 좌석 초기화
         int index = 0;
         
-        while(!queue.isEmpty() && index < m) {
-            if(queue.peek() <= time) {
-                seats[index++] = queue.poll();
-            } else break;
+        while(!queue.isEmpty() && index < m && queue.peek() <= time) {
+            seats[index++] = queue.poll();
         }
         
         return seats;
