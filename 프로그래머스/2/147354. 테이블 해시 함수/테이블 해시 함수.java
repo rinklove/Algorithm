@@ -1,6 +1,15 @@
 import java.util.Arrays;
 
 class Solution {
+    /*
+        col -> index data튜플에서 (col-1)번째 인덱스를 기준으로 오름차순
+            -> 값이 동일하면 첫번째 값을 기준으로 내림차순
+        
+        0 =   0
+        4 = 100
+        
+        길이를 맞춘 후 xor 연산 수행 
+    */
     public int solution(int[][] data, int col, int row_begin, int row_end) {
         int answer = 0;
         
