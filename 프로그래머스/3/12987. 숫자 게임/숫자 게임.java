@@ -1,31 +1,28 @@
 import java.util.Arrays;
+
 class Solution {
-    /*
-        1 3 5 7
-        2 2 6 8
-        10만번이면 사실상 dfs, bfs는 불가능한 방법인거 같은데...
-        
-    */
     public int solution(int[] A, int[] B) {
         int answer = 0;
         int aIndex = 0;
         int bIndex = 0;
         int length = A.length;
         
+        // 각 팀을 오름차순으로 정렬
         Arrays.sort(A);
         Arrays.sort(B);
+        
         while(aIndex < length && bIndex < length) {
             int playerA = A[aIndex];
             int playerB = B[bIndex];
             
+            //만약 B팀이 A팀을 이겼다면 
+            //다음 A팀원과 대결하기 위해 A팀 인덱스 증가
             if(playerA < playerB) {
                 aIndex++;
                 answer++;
             }
             bIndex++;
-            
         }
-        
         return answer;
     }
 }
