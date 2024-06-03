@@ -1,7 +1,3 @@
-/*
-    합집합 - set
-    교집합 - 
-*/
 import java.util.List;
 import java.util.ArrayList;
 
