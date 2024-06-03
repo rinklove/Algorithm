@@ -1,13 +1,6 @@
 import java.util.Queue;
 import java.util.LinkedList;
-/*
-    1110 
-    1220
-    1001
-    0001
-    0003
-    0003
-*/
+
 class Solution {
     private boolean[][] visited;
     public int[] solution(int m, int n, int[][] picture) {
