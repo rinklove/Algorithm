@@ -6,16 +6,17 @@ class Solution {
     public int solution(String dirs) {
         int answer = 0;
         
+        //시작 좌표
         int startX = 0;
         int startY = 0;
         
         for(int i = 0; i < dirs.length(); i++) {
+            //이동할 좌표
             int curX = startX;
             int curY = startY;
             
             //방향 지정
             char dir = dirs.charAt(i);
-            
             switch(dir) {
                 case 'U': curX++; break;
                 case 'D': curX--; break;
@@ -28,7 +29,7 @@ class Solution {
                 String path = startX + "" + startY + "" + curX + "" + curY;
                 String reverse = curX + "" + curY + "" + startX + "" + startY;
                 
-                //이전 위치에서 현재 위치로 이동한 적이 없을 경우 갱신
+                //이전 위치에서 현재 위치로 이동한 적이 없을 경우 갱신 및 이동 거리 추가
                 answer += isNewPath(path, reverse);
                 startX = curX;
                 startY = curY;
