@@ -1,25 +1,26 @@
 import java.util.*;
 
 class Solution {
-    private boolean[][] visited;
-    private final Set<Integer> set = new HashSet<>();
+    //이미 추출한 지역인지 체크하는 변수
+    private boolean[][] visited;    
+    //각 라인의 시추 지역 번호를 저장하는 변수
+    private final Set<Integer> set = new HashSet<>();   
     public int solution(int[][] land) {
         int rows = land.length;
         int cols = land[0].length;
         
         visited = new boolean[rows][cols];
-        int[][] map = new int[rows][cols];
-        
+        int[][] map = new int[rows][cols];  //시추 지역번호를 저장하는 변수
         List<Integer> oilCount = new ArrayList<>();
         
+        //bfs로 각 시추 지역의 번호 생성 및 추출량 반환
         for(int w = 0; w < land[0].length; w++) {
             for(int d = 0; d < land.length; d++) {
                 if(!visited[d][w] && land[d][w] == 1) {
                     int count = search(land, d, w, oilCount.size()+1, map);
-                    oilCount.add(count);
+                    oilCount.add(count);    //추출량 저장
                 }                
             }
-            
         }
         
         return getMaxCount(map, oilCount, rows, cols);
@@ -28,6 +29,7 @@ class Solution {
     private int getMaxCount(int[][] map, List<Integer> list, int rows, int cols) {
         int max = 0;
         
+        //각 라인에 대해서 시추 시 최대가 되는 추출량 계산
         for(int col = 0; col < cols; col++) {
             int count = 0;
             for(int row = 0; row < rows; row++) {
@@ -46,6 +48,7 @@ class Solution {
         return max;
     }
     
+    //bfs 수행
     private int search(int[][] land, int d, int w, int oilId, int[][] oilMap) {
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{d, w});
