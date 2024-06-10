@@ -13,18 +13,18 @@ class Solution {
             2번 이상 인용된 논문 - 3개
             3번 이상 인용된 논문 - 3개
             4번 이상 인용된 논문 - 2개(거짓)
-            1 1 3 3 3 5 5 6 11 41 
-            0 = 10개
         */
-        
-
-        while(true) {            
-            while(index < length && citations[index] <= hIndex ) {
+        while(true) {          
+            //논문 중에서 현재 hIndex보다 낮은 인용수의 논문은 건너뜀
+            while(index < length && citations[index] <= hIndex) {
                 index++;
             }
+            
+            //남은 논문의 개수가 hIndex보다 작으면 종료
             if(hIndex >= length-index) {
                 break;
             }
+            //hIndex값 증가
             hIndex++;
         }
         return hIndex;
