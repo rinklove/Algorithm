@@ -1,9 +1,6 @@
 class Solution {
     public int solution(int[] numbers, int target) {
-        int answer = 0;
-        
-        answer = dfs(numbers, 0, target, 0);
-        return answer;
+        return dfs(numbers, 0, target, 0);
     }
     
     private int dfs(int[] numbers, int current, int target, int depth) {
