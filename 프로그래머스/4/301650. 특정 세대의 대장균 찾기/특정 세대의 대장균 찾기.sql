@@ -1,0 +1,25 @@
+-- 코드를 작성해주세요
+WITH RECURSIVE RS AS (
+    SELECT 
+        ID
+        , PARENT_ID
+        , 1 GENERATION
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+    
+    UNION ALL
+    
+    SELECT
+        E.ID
+        , E.PARENT_ID
+        , R.GENERATION + 1
+    FROM RS R
+    INNER JOIN ECOLI_DATA E
+    ON R.ID = E.PARENT_ID
+)
+
+SELECT
+    ID
+FROM RS
+WHERE RS.GENERATION = 3
+ORDER BY 1;
