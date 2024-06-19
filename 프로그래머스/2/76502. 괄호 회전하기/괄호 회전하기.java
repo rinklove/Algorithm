@@ -31,7 +31,7 @@ class Solution {
                     default: stack.push(c); break;
                 }
             }
-        } catch(Exception e) {
+        } catch(EmptyStackException e) {
             return 0;
         }
         
