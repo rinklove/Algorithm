@@ -5,11 +5,8 @@ class Solution {
     public int solution(String s) {
         int answer = 1;
         s = makeString(s);
-        int[] dp = new int[s.length()];
-        dp[0] = 0;
-        dp[1] = 1;
         
-        for(int d = 2; d < dp.length; d++) {
+        for(int d = 0; d < s.length(); d++) {
             answer = Math.max(answer, find(s, d));
         }
         return answer;
