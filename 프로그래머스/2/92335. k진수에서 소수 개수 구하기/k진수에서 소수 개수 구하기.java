@@ -1,12 +1,7 @@
-/*
-    소수를 어디까지 구해야하나?
-*/
 class Solution {
-    
     public int solution(int n, int k) {
         int answer = -1;
-        String str = Integer.toString(n, k);
-        String[] numbers = str.split("0");
+        String[] numbers = Integer.toString(n, k).split("0");
         
         answer = getPrimeNumbers(numbers);
         return answer;
