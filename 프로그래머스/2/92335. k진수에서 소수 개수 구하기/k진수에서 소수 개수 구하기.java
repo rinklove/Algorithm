@@ -30,20 +30,4 @@ class Solution {
         }
         return count;
     }
-    
-    private long getMax() {
-        long max = -1;
-        for(int i = 1; i <= 1000000; i++) {
-            for(int d = 3; d <= 10; d++) {
-                String[] split = Integer.toString(i, d).split("0");
-                for(String s : split) {
-                    if(!s.isEmpty()) {
-                        System.out.println(s);
-                        max = Math.max(max, Long.parseLong(s));
-                    }
-                }
-            }
-        }
-        return max;
-    }
 }
