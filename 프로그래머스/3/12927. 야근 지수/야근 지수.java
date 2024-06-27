@@ -1,7 +1,9 @@
 import java.util.*;
-
+/*
+    야근 지수가 언제 최소가 되는가? 
+    -> 남아 있는 일의 양이 균등할 때
+*/
 class Solution {
-    
     public long solution(int n, int[] works) {
         PriorityQueue<Integer> pq = new PriorityQueue<>((w1, w2) -> w2 - w1);
         setWorks(pq, works);
