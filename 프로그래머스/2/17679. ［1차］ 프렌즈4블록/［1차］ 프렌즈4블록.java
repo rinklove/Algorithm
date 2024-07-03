@@ -1,15 +1,3 @@
-/*
-    TTTANT
-    RRFACC
-    RRRFCC
-    TRRRAA
-    TTMMMF
-    TMMTTJ
-    
-    TRRTTT
-    TRRRTM
-    TFRRMM
-*/
 import java.util.Queue;
 import java.util.LinkedList;
 
