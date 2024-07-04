@@ -12,3 +12,14 @@ class Solution {
         return number % 4 == 3 ? 2*function(number/2) + number%2 : number+1;
     }
 }
+
+// class Solution {
+//     public long[] solution(long[] numbers) {
+//         long[] answer = numbers.clone();
+//         for(int i = 0; i < answer.length; i++) {
+//             answer[i]++;
+//             answer[i] += (answer[i]^numbers[i])>>>2;
+//         }
+//         return answer;
+//     }
+// }
