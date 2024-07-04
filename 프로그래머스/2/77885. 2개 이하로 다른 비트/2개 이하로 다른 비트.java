@@ -1,3 +1,4 @@
+//나의 풀이(재귀 사용)
 class Solution {
     public long[] solution(long[] numbers) {
         long[] answer = new long[numbers.length];
@@ -13,6 +14,7 @@ class Solution {
     }
 }
 
+//다른 분의 풀이(^와 >>> 사용)
 // class Solution {
 //     public long[] solution(long[] numbers) {
 //         long[] answer = numbers.clone();
