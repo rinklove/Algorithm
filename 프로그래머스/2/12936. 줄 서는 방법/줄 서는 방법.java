@@ -12,11 +12,11 @@ class Solution {
         k--;
         for (int i = 0; i < answer.length; i++) {
             // n-1명의 사람을 줄 세우는 경우의 수
-            long tmp = f / n;
+            long subSequence = f / n;
             // 현재 위치에 올 수 있는 숫자 결정
-            answer[i] = list.remove((int) (k / tmp));
+            answer[i] = list.remove((int) (k / subSequence));
             // 다음 위치를 결정하기 위해 k값을 업데이트
-            k %= tmp;
+            k %= subSequence;
             // n-1의 경우로 줄어듦
             f /= n;
             n--;
