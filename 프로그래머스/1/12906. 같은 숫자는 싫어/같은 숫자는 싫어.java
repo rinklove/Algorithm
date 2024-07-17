@@ -1,19 +1,21 @@
-import java.util.*;
+import java.util.Stack;
 
 public class Solution {
-    public int[] solution(int []arr) {
-        ArrayList<Integer> list = new ArrayList<>();
-		list.add(arr[0]);
-		for(int i =1; i<arr.length;i++) {
-			if(!(arr[i-1] == arr[i])) {
-				list.add(arr[i]);
-			}
-		}
-		int[] answer = new int[list.size()];
-		for(int i=0; i<list.size();i++) {
-			answer[i] = list.get(i);
-		}
-
+    public int[] solution(int[] arr) {
+        Stack<Integer> stack = new Stack<>();
+        
+        stack.push(arr[0]);
+        for(int i = 1; i < arr.length; i++) {
+            if(stack.peek() != arr[i]){
+                stack.push(arr[i]);
+            }
+        }
+        
+        int[] answer = new int[stack.size()];
+        for(int i = answer.length - 1; i >= 0; i--) {
+            answer[i] = stack.pop();
+        }
+        
         return answer;
     }
 }
