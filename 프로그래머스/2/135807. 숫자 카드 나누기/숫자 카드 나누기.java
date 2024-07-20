@@ -12,9 +12,9 @@ class Solution {
         manufacture(arrayA);
         manufacture(arrayB);
         
+        //왼쪽 배열에서 모두 나누어지면서 오른쪽 배열에서 모두 나누어지지 않는 최댓값을 구함 
         int maxA = findMax(arrayA, arrayB);
         int maxB = findMax(arrayB, arrayA);
-        System.out.println("maxA = " + maxA + ", maxB = " + maxB);
         return Math.max(maxA, maxB);
     }
     
