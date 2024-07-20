@@ -19,12 +19,7 @@ class Solution {
     }
     
     private void manufacture(int[] array) {
-        array = Arrays.stream(array)
-            .distinct()
-            .boxed()
-            .sorted((i1, i2) -> i2 - i1)
-            .mapToInt(i->i)
-            .toArray();
+        Arrays.sort(array);
     }
     
     private int findMax(int[] target, int[] opposite) {
