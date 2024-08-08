@@ -1,12 +1,3 @@
-/*
-    x^2 + y^2 = 4
-    
-    x^2 + y^2 = 9
-    x^2 = 9 - y^2
-    x = 루트(9 - y^2)
-    
-    4 <= x1^2 + y1^2 <= 9
-*/
 class Solution {
     public long solution(int r1, int r2) {
         long answer = 0;
